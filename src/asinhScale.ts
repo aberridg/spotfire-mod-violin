@@ -51,10 +51,13 @@ export function scaleAsinh() {
   scale.ticks = (count: number) => {
     //Log.green(LOG_CATEGORIES.AsinhScale)("count", count);
     const d = scale.domain();
+    Log.green(LOG_CATEGORIES.AsinhScale)("domain", d.map((t:any) => t.toExponential(2)));
     let min = d[0];
     let max = d[d.length - 1];
     const r = max < min;
-
+    if (min == 0) {
+      min = 0.0000000000000001;
+    }
     let powMin = Math.log10(Math.abs(min));
     let powMax = Math.log10(Math.abs(max));
     let k;

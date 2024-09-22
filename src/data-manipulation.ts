@@ -1012,7 +1012,7 @@ function buildSumStats(
       closestValueToZero: closestValueToZero
     } as SummaryStatistics;
 
-    Log.green(LOG_CATEGORIES.DebugBoxIssue)(stats);
+    Log.green(LOG_CATEGORIES.AsinhScale)("Done stats...", trellisName, stats);
 
     sumstat.set(category, stats);
   }
