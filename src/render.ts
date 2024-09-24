@@ -53,6 +53,7 @@ import {
   renderReferenceLinesAndPoints,
   renderTrendLines,
 } from "./render-reference-and-trend-lines";
+import { renderStraightLines } from "./straightLines";
 
 /*
  * Adapted from:
@@ -912,6 +913,21 @@ export async function render(
     styling,
     tooltip
   );
+
+    /**
+   * Add reference lines/points if any are enabled
+   */
+    renderStraightLines(
+      g,
+      config,
+      plotData,
+      margin,
+      xScale,
+      yScale,
+      fontClass,
+      styling,
+      tooltip
+    );
 
   /**
    * Render trend lines if any are enabled
