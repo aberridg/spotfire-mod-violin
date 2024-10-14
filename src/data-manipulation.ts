@@ -1222,7 +1222,7 @@ function buildSumStats(
 >>>>>>> 7df09fe71b6c7cca30c104321bcf5cd7cc99ea5f
     } as SummaryStatistics;
 
-    Log.green(LOG_CATEGORIES.DebugBoxIssue)(stats);
+    Log.green(LOG_CATEGORIES.AsinhScale)("Done stats...", trellisName, stats);
 
     sumstat.set(category, stats);
   }

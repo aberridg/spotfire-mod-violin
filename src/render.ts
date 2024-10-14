@@ -77,6 +77,7 @@ import {
   renderTrendLines,
 } from "./render-reference-and-trend-lines";
 
+
 /*
  * Adapted from:
  * https://stackoverflow.com/questions/34893707/is-there-a-polyfill-for-getintersectionlist-getenclosurelist-checkintersection
