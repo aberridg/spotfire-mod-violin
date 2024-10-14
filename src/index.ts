@@ -491,11 +491,14 @@ Spotfire.initialize(async (mod) => {
             // Can't have thousands separator
             formatString = "." + config.yAxisDecimals.value() + "s";
             break;
-          case "currency":
+          case "currency":            
             d3.formatDefaultLocale({
               currency: [config.yAxisCurrencySymbol.value(), ""],
             });
-            return d3.formatPrefix("$.2", number)(number).replace("G", "B");
+            if (number < 1) {
+              return d3.format("$.2f")(number);
+            }
+            return d3.formatPrefix("$.2f", number)(number).replace("G", "B");
         }
 
         //Log.green(LOG_CATEGORIES.CurrencyFormatting)(formatString);
